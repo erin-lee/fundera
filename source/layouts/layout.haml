@@ -1,0 +1,38 @@
+!!! 5
+/[if lt IE 7] <html class="no-js lt-ie9 lt-ie8 lt-ie7">
+/[if IE 7]    <html class="no-js lt-ie9 lt-ie8">
+/[if IE 8]    <html class="no-js lt-ie9">
+<!--[if gt IE 8]><!-->
+%html{:class => "no-js"}
+  <!--<![endif]-->
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{'http-equiv' => "X-UA-Compatible", :content =>"IE=edge,chrome=1"}
+    %title= "Fundera | " + current_page.data.title
+
+    %meta{:name => "description", :content => "Apply for a small business loan"}
+    %meta{:name => "author", :content => "erin"}
+    = stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "libs/modernizr-2.6.1.min"
+
+  %body{:class => current_page.data.bodyclass}
+    /[if lt IE 7]
+      %p.chromeframe
+        You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.
+
+    %header.page-header
+      =image_tag 'logo.png'
+      %h1 See Your Loan Options in Seconds
+      %h4 Fill in the form below to see your loan options immediately.
+
+    #main-content{:role => "main"}
+      = yield
+      / %footer
+      /   %p &copy; #{copyright_years(2014)} Erin Lee
+
+    = javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"
+    = javascript_include_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"
+    = javascript_include_tag "http://parsleyjs.org/dist/parsley.min.js"
+
+    = javascript_include_tag "plugins", "script"

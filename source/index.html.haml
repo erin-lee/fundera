@@ -1,0 +1,114 @@
+---
+title:     Apply for a Small Business Loan
+bodyclass: page-signup
+---
+%section.form-application
+  .band-slate
+    .form-container
+      * All fields required.
+
+  / Form Section Starts
+  %form#appliction
+
+    / Loan Detail Section
+    .form-container
+      .form-group
+        .label-column
+          %label Desired Loan Amount
+        .input-column
+          .input-descript
+            Please enter the amount of working capital your business is looking for.
+            %br
+            %em Enter a loan amount greater than $2,500 and below $5,000,000.
+          %input.form-control{ placeholder: "$", required: "" }
+      .form-group
+        .label-column
+          %label Loan purpose
+        .input-column
+          %select.form-control
+            %option I will use this loan for ...
+      .form-group
+        .label-column
+          %label what is your credit score?
+        .input-column
+          %select.form-control
+            %option My credit score is ...
+      .form-group.business-start-section
+        .label-column
+          %label when did you start your business?
+        .input-column
+          .js-trigger-hide
+            .col-md-5
+              %select.form-control
+                %option Month
+            .col-md-5
+              %select.form-control
+                %option Year
+          .col-md-12
+            %br
+            %a.js-toggle-hide{ href: "#", data: { hide: "#has-business" } }
+              I haven't started my business yet
+
+    / Additional Form Fields
+    .form-group-additional#has-business
+      .form-container
+        .form-group
+          .label-column
+            %label annual sales
+          .input-column
+            .input-descript Please note only current, not projected, annual sales apply here.
+            %input.form-control{ placeholder: "$", required: ""  }
+        .form-group
+          .label-column
+            %label average bank balance
+          .input-column
+            .input-descript What is the average cash balance in your business bank account?
+            %input.form-control{ placeholder: "$", required: ""  }
+        .form-group
+          .label-column
+            %label Do you process credit cards?
+          .input-column
+            %label.radio-inline
+              %input{ type: "radio", name: "credit_card", value: "true" }
+                Yes
+                %em (additional fields)
+            %label.radio-inline
+              %input{ type: "radio", name: "credit_card", value: "false" }
+                No
+            .cc-additional-fields.additional-fields
+              .form-group
+                %label
+                  Average Credit Card Transaction Size:
+                %input.form-control{ type: "number", placeholder: "$" }
+              .form-group
+                %label Credit Card volume per month:
+                %input.form-control{ type: "number", placeholder: "$" }
+
+    / Create Account Form Section
+    .band-slate
+      .form-container
+        %em Nearly there!
+        %h4 Create an account to see your matches.
+    .form-container
+      .form-group.form-inline
+        .label-column
+          %label Name
+        .input-column
+          .col-md-5
+            %input.form-control{ placeholder: "first name", required: ""  }
+          .col-md-5
+            %input.form-control{ placeholder: "last name", required: ""  }
+      .form-group
+        .label-column
+          %label Business Name
+        .input-column
+          %input.form-control{ placeholder: "Your company LLC", required: ""  }
+      .form-group
+        .label-column
+          %label Email
+        .input-column
+          %input.form-control{ type: "email", placeholder: "your@email.com", required: ""  }
+      .form-group
+        %p By clicking 'See My Loan Options', you agree to our <a href="/tos" target="_blank">Terms of Service</a> and <a href="/privacy" target="_blank">Privacy Policy</a>
+        %button.btn.btn-lg{ type: "submit" } See My Loan Options
+        / Form Section Ends
